@@ -14,7 +14,7 @@ int main(){
   return 0;
 }
 
-void SetThing(int new_thing){
+void SetThing(int new_thing){       // this DOES NOT change the value of param passed in
   new_thing = 10;
 }
 
