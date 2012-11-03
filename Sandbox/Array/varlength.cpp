@@ -1,12 +1,17 @@
 #include <iostream>
 #include <string>
 
-int main(){
-	using namespace std;
-	string one[3] = { "one", "two", "three"};
-	cout << one[2] << endl;
-	return 0;
-}
+// Number of elements in an array
+//template <typename T, int N> char (&array(T(&)[N]))[N];
 
-//http://stackoverflow.com/questions/1454843/variable-length-array-of-classes
-//https://groups.google.com/forum/?fromgroups=#!topic/gnu.g++.help/pUJAALS2gyU
+// Old klunky way
+#define length(a) (sizeof a / sizeof a[0])
+
+int main()
+{
+  using namespace std;
+  string a[19] = {"one", "two"};
+
+  //std::cout << sizeof array(a) << '\n';
+  std::cout << length(a) << '\n';
+}
