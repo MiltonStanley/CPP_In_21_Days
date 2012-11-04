@@ -5,13 +5,18 @@
 //template <typename T, int N> char (&array(T(&)[N]))[N];
 
 // Old klunky way
-#define length(a) (sizeof a / sizeof a[0])
+#define length(_temp) (sizeof _temp / sizeof _temp[0])
 
 int main()
 {
   using namespace std;
-  string a[19] = {"one", "two"};
+  
 
-  //std::cout << sizeof array(a) << '\n';
-  std::cout << length(a) << '\n';
+  string _temp[19] = {"one", "two"};
+
+  //std::cout << sizeof array(_temp) << '\n';
+  std::cout << length(_temp) << '\n';
+
+
+  return 0;
 }
