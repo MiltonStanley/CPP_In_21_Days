@@ -1,35 +1,43 @@
 #include <iostream>
 #include <string>
 
-// Number of elements in an array
 //template <typename T, int N> char (&array(T(&)[N]))[N];
 
-// Old klunky way
 #define length(_temp) (sizeof _temp / sizeof _temp[0])
-#define len(ptest) (sizeof ptest / sizeof ptest[0])
+#define length(parray) (sizeof parray / sizeof parray[0])
+#define aaa(parray) (sizeof parray)
+#define bbb(parray) (sizeof parray[0])
 
 using namespace std;
 
-void puts(int, string);
-//void puts(int, int);
+void puts (int length, string * arr){
+  for(int i=0; i<length; i++){
+    cout << "Arr[" << i << "] = " << arr[i] << endl;
+  }
+}
 
 int main()
 {
+  cout << endl;
   string _temp[4] = {"one", "two", "three", "four"};
-  string * ptest = new string[1];
-//  int a = 5;
-//  int * ptest = &a;
+
+  string *parray = new string[1];
+  parray[0] = "hello goodbye this is a very long string maybe overloaded?";
+  cout << *parray << endl;
+  cout << parray[0] << endl;
+  cout << endl;
+
+  cout << "Size of parray: " << aaa(parray) << endl;
+  cout << "Size of parray[0]: " << bbb(parray) << endl;
+  cout << "Full size of parray: " << length(parray) << endl;
 
   cout << "Length of base array: " << length(_temp) << '\n';
-  cout << "Length of growing array: " << len(ptest) << endl;
 
-  puts(4, *ptest); 
+  cout << "---------------------" << endl;
+  puts(length(_temp), _temp);
 
   return 0;
 }
 
-void puts (int length, string arr[]){
-//void puts (int length, int arr){
-  for(int i=0; i<length; i++)
-  cout << i << endl;
-}
+
+
