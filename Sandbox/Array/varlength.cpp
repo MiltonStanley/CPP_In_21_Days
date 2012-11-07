@@ -12,10 +12,12 @@ int main()
   using namespace std;
   
 
-  string _temp[19] = {"one", "two"};
+  string _temp[19] = {"one", "two", "three", "four"};
 
   //std::cout << sizeof array(_temp) << '\n';
   std::cout << length(_temp) << '\n';
+
+  string Mike = new string[1];
 
 
   return 0;
