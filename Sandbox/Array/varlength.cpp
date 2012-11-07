@@ -6,19 +6,30 @@
 
 // Old klunky way
 #define length(_temp) (sizeof _temp / sizeof _temp[0])
+#define len(ptest) (sizeof ptest / sizeof ptest[0])
+
+using namespace std;
+
+void puts(int, string);
+//void puts(int, int);
 
 int main()
 {
-  using namespace std;
-  
+  string _temp[4] = {"one", "two", "three", "four"};
+  string * ptest = new string[1];
+//  int a = 5;
+//  int * ptest = &a;
 
-  string _temp[19] = {"one", "two", "three", "four"};
+  cout << "Length of base array: " << length(_temp) << '\n';
+  cout << "Length of growing array: " << len(ptest) << endl;
 
-  //std::cout << sizeof array(_temp) << '\n';
-  std::cout << length(_temp) << '\n';
-
-  string Mike = new string[1];
-
+  puts(4, *ptest); 
 
   return 0;
+}
+
+void puts (int length, string arr[]){
+//void puts (int length, int arr){
+  for(int i=0; i<length; i++)
+  cout << i << endl;
 }
