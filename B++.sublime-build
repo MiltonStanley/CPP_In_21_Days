@@ -1,0 +1,8 @@
+{
+  "cmd": ["bcc32", "$file", "&&", "call", "$file_base_name"],
+  "file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+  "working_dir": "${project_path:${folder}}",
+  "selector": "source.c",
+  "shell": true,
+  "encoding": "latin1"
+}
