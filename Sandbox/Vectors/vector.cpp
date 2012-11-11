@@ -23,12 +23,15 @@ int main() {
   myVector.push_back(9);
   
   cout << "Size: " << myVector.size() << endl;
-      
-  for(vector<int>::iterator i = myVector.begin(); i<myVector.end(); i++){ // Set up iterator
-    int * start = myVector.begin();     // start is a pointer to the beginning of the vector
-    int currentIndex = i - start;       // currentIndex is the difference between i (iterator pointer) and start (beginning of vector)
-    cout << "Element " << currentIndex << ": " << *i << endl;
-  }
-    
+   
+  for(int i=0; i<myVector.size(); i++){
+    cout << "myVector[" << i << "]: " << myVector[i] << endl;
+  } 
+
+  cout << "First: " << myVector.front() << endl;
+  cout << "Last: " << myVector.back() << endl;
+
   return 0;
 }
+
+//http://www.mochima.com/tutorials/vectors.html
