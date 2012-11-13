@@ -1,10 +1,9 @@
 #include <iostream>
-
-int add(int x, int y);
+#include "add.h"
 
 int main() {
 	using namespace std;
 //	cout << "testing" << endl;
-	cout << "1 + 2 = " << add(1,2) << endl;
+	cout << "4 + 66 = " << add(4,66) << endl;
 	return 0;
 }
